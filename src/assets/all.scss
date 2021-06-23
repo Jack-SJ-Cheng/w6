@@ -4,14 +4,19 @@
 @import "~bootstrap";
 
 .jumbotron {
-    padding: 5rem 1rem 10rem 0rem;
+    padding: 8rem 2rem 1rem 2rem;
     margin-bottom: 2rem;
     background-color: #e9ecef;
     color: white;
 }
 .jumbotron-bg{
-    background-image: url('./assets/sam.jpg');
+    background-image: url('./assets/castle.jpg');
     background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+.jumbotron-bg::before{
+    opacity: 0.2;
 }
 .fit{
     object-fit: scale-down;

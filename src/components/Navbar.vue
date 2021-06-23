@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-toggler border-0" href="#">
         <img src="@/assets/sLOGO.png" height="50" />
       </a>
       <button
@@ -16,15 +16,15 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">回到櫃檯</a>
+            <a class="nav-link" href="#">回到櫃台</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">瀏覽商品</a>
+            <router-link to="/products" class="nav-link">瀏覽商品</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">詢問分類</a>
+            <a class="nav-link" href="#">購物車</a>
           </li>
         </ul>
       </div>
