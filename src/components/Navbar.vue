@@ -1,4 +1,10 @@
 <template>
+<div class="fixed-top">
+  <div class="d-flex justify-content-center bg-white">
+    <h1 class="d-none d-lg-block pt-2">
+    <a class="logo" href="#">勇者的倉庫</a>
+  </h1>
+  </div>
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">
       <a class="navbar-toggler border-0" href="#">
@@ -30,6 +36,7 @@
       </div>
     </div>
   </nav>
+</div>
 </template>
 
 <script>

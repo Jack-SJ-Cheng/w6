@@ -24,3 +24,16 @@
 .fit{
     object-fit: scale-down;
 }
+.logo{
+    background-image: url('./assets/sLOGO.png');
+    background-size: cover;
+    display: block;
+	text-indent: 101%;
+	overflow: hidden;
+	white-space: nowrap;
+	height: 80px;
+    width: 80px;
+}
+.m-top{
+    margin-top: 152px;
+}
