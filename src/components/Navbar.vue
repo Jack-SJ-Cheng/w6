@@ -2,14 +2,14 @@
 <div class="fixed-top">
   <div class="d-flex justify-content-center bg-white">
     <h1 class="d-none d-lg-block pt-2">
-    <a class="logo" href="#">勇者的倉庫</a>
+    <a class="slogo" href="#">勇者倉庫</a>
   </h1>
   </div>
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">
-      <a class="navbar-toggler border-0" href="#">
-        <img src="@/assets/sLOGO.png" height="50" />
-      </a>
+      <h2>
+        <a class="navbar-toggler border-0 tlogo" href="#">勇者倉庫</a>
+      </h2>
       <button
         class="navbar-toggler"
         type="button"
@@ -30,7 +30,10 @@
             <router-link to="/products" class="nav-link">瀏覽商品</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/cart" class="nav-link" href="#">購物車</router-link>
+            <router-link to="/cart" class="nav-link">購物車</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/" class="nav-link">倉庫管理守則</router-link>
           </li>
         </ul>
       </div>

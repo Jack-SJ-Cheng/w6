@@ -24,7 +24,7 @@
 .fit{
     object-fit: scale-down;
 }
-.logo{
+.slogo{
     background-image: url('./assets/sLOGO.png');
     background-size: cover;
     display: block;
@@ -34,6 +34,23 @@
 	height: 80px;
     width: 80px;
 }
+.tlogo{
+    background-image: url('./assets/tLOGO.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+	text-indent: 110%;
+	overflow: hidden;
+	white-space: nowrap;
+	height: 48px;
+    width: 150px;
+}
 .m-top{
     margin-top: 152px;
+}
+@media screen and (max-width: 992px) {
+    .m-top{
+        margin-top: 59px;
+    }
 }
