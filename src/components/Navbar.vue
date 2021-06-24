@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">
       <a class="navbar-toggler border-0" href="#">
         <img src="@/assets/sLOGO.png" height="50" />
@@ -24,7 +24,7 @@
             <router-link to="/products" class="nav-link">瀏覽商品</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">購物車</a>
+            <router-link to="/cart" class="nav-link" href="#">購物車</router-link>
           </li>
         </ul>
       </div>

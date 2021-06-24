@@ -56,11 +56,10 @@
     </tfoot>
   </table>
   <pagination :page="pagination" @get-data="getData"></pagination><br />
-  <product-modal
-    ref="productModal"
+  <ProductModal ref="productModal"
     :info="productInfo"
     @add-cart="addCart"
-  ></product-modal>
+  ></ProductModal>
 </template>
 
 <script>
@@ -89,7 +88,7 @@ export default {
   },
   methods: {
     openModal() {
-      ProductModal.openModal();
+      this.$refs.productModal.openModal();
     },
     getData(page = 1) {
       this.$http

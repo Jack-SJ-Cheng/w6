@@ -66,6 +66,8 @@
 </template>
 
 <script>
+import { Modal } from 'bootstrap';
+
 export default {
   props: ['info'],
   data() {
@@ -79,6 +81,9 @@ export default {
     openModal() {
       this.modal.show();
     },
+  },
+  mounted() {
+    this.modal = new Modal(this.$refs.productModal);
   },
 };
 </script>
