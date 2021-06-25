@@ -11,6 +11,7 @@
         <a class="navbar-toggler border-0 tlogo" href="#">勇者倉庫</a>
       </h2>
       <button
+        ref="bur"
         class="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
@@ -24,7 +25,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">回到櫃台</a>
+            <a class="nav-link" href="#" @click="show">回到櫃台</a>
           </li>
           <li class="nav-item">
             <router-link to="/products" class="nav-link">瀏覽商品</router-link>
@@ -43,5 +44,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    show() {
+      this.$refs.bur.onclick();
+    },
+  },
+};
 </script>
