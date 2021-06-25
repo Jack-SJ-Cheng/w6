@@ -1,5 +1,6 @@
 <template>
   <div class="container m-top">
+    <Loading :active="isLoading"></Loading>
     <table class="table align-middle">
       <thead>
         <tr>
@@ -43,8 +44,7 @@
                 type="button"
                 class="btn btn-outline-danger"
                 @click="addCart(item.id, 1)"
-              >
-                加入購物車
+              >加入購物車
               </button>
             </div>
           </td>
@@ -87,6 +87,8 @@ export default {
       purchase: [],
       pagination: [],
       message: '',
+      isLoading: false,
+      addLoading: false,
     };
   },
   methods: {
@@ -94,6 +96,7 @@ export default {
       this.$refs.productModal.openModal();
     },
     getData(page = 1) {
+      this.isLoading = true;
       this.$http
         .get(
           `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/products?page=${page}`,
@@ -102,6 +105,7 @@ export default {
           if (res.data.success) {
             this.products = res.data.products;
             this.pagination = res.data.pagination;
+            this.isLoading = false;
           }
         })
         .catch((err) => console.log(err));
@@ -118,6 +122,7 @@ export default {
         .catch((err) => console.log(err));
     },
     addCart(id, qty) {
+      this.isLoading = true;
       this.$http
         .post(
           `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`,
@@ -127,51 +132,14 @@ export default {
         )
         .then((res) => {
           if (res.data.success) {
-            this.updateCart();
+            this.isLoading = false;
           }
-        })
-        .catch((err) => console.log(err));
-    },
-    updateCart() {
-      this.$http
-        .get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`)
-        .then((res) => {
-          this.purchase = res.data.data.carts;
-          console.log(res.data.data.carts);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    sendOrder() {
-      const data = {
-        data: {
-          user: this.user,
-          message: this.message,
-        },
-      };
-      this.$http
-        .post(
-          `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/order`,
-          data,
-        )
-        .then((res) => {
-          console.log(res);
-          this.updateCart();
-          this.user = {
-            email: '',
-            name: '',
-            tel: '',
-            address: '',
-          };
-          this.message = '';
         })
         .catch((err) => console.log(err));
     },
   },
   mounted() {
     this.getData();
-    this.updateCart();
   },
 };
 </script>

@@ -1,5 +1,6 @@
 <template>
   <div class="m-top container">
+    <Loading :active="isLoading"></Loading>
     <button
       @click="deleteCart"
       class="btn btn-outline-danger m-2"
@@ -29,7 +30,7 @@
           <td class="text-center">{{ item.final_total }}</td>
           <td class="text-end">
             <button class="btn text-danger" @click="deleteCartItem(item.id)">
-              <img src="../assets/times-solid.svg" alt="" />
+              <i class="fas fa-times"></i>
             </button>
           </td>
         </tr>
@@ -50,30 +51,36 @@ export default {
     return {
       purchase: [],
       finalTotal: '',
+      isLoading: false,
     };
   },
   methods: {
     updateCart() {
+      this.isLoading = true;
       this.$http
         .get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`)
         .then((res) => {
           this.purchase = res.data.data.carts;
           this.finalTotal = res.data.data.final_total;
+          this.isLoading = false;
         })
         .catch((err) => {
           console.log(err);
         });
     },
     deleteCart() {
+      this.isLoading = true;
       this.$http
         .delete(
           `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/carts`,
         )
         .then(() => {
           this.updateCart();
+          this.isLoading = false;
         });
     },
     deleteCartItem(id) {
+      this.isLoading = true;
       this.$http
         .delete(
           `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart/${id}`,
@@ -81,6 +88,7 @@ export default {
         .then((res) => {
           if (res.data.success) {
             this.updateCart();
+            this.isLoading = false;
           }
         });
     },
