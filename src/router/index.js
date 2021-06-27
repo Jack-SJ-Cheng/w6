@@ -15,7 +15,7 @@ const routes = [
   },
   {
     path: '/about',
-    component: () => import('../views/Test.vue'),
+    component: () => import('../views/About.vue'),
   },
   {
     path: '/check',
