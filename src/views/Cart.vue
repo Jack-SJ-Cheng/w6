@@ -26,7 +26,7 @@
           </td>
           <td>{{ item.product.title }}</td>
           <td class="text-center">{{ item.product.price }}</td>
-          <td class="text-center">1</td>
+          <td class="text-center">{{ item.qty }}</td>
           <td class="text-center">{{ item.final_total }}</td>
           <td class="text-end">
             <button class="btn text-danger" @click="deleteCartItem(item.id)">
@@ -42,6 +42,10 @@
         </tr>
       </tfoot>
     </table>
+    <div class="d-flex justify-content-end">
+      <button type="button" class="btn btn-outline-danger"
+      @click="this.$router.push('/about')">填寫收件資料</button>
+    </div>
   </div>
 </template>
 
@@ -63,6 +67,7 @@ export default {
           this.purchase = res.data.data.carts;
           this.finalTotal = res.data.data.final_total;
           this.isLoading = false;
+          console.log(res);
         })
         .catch((err) => {
           console.log(err);

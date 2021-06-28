@@ -1,0 +1,59 @@
+.jumbotron {
+  padding: 8rem 2rem 1rem 2rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  color: white;
+}
+.jumbotron-bg {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.7) 25%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 75%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    url("./assets/castle.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.jumbotron-bg::before {
+  opacity: 0.2;
+}
+.fit {
+  object-fit: scale-down;
+}
+.slogo {
+  background-image: url("./assets/sLOGO.png");
+  background-size: cover;
+  display: block;
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 80px;
+  width: 80px;
+}
+.tlogo {
+  background-image: url("./assets/tLOGO.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  text-indent: 110%;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 48px;
+  width: 150px;
+}
+.m-top {
+  margin-top: 152px;
+}
+.footer{
+  background-color:	#F0F0F0;
+}
+@media screen and (max-width: 992px) {
+  .m-top {
+    margin-top: 72px;
+  }
+}

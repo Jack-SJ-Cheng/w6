@@ -21,6 +21,10 @@ const routes = [
     path: '/check',
     component: () => import('../views/BuyerInfo.vue'),
   },
+  {
+    path: '/success',
+    component: () => import('../views/Success.vue'),
+  },
 ];
 
 const router = createRouter({
