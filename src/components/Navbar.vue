@@ -33,9 +33,6 @@
           <li class="nav-item">
             <router-link to="/cart" class="nav-link">購物車</router-link>
           </li>
-          <li class="nav-item">
-            <router-link to="/about" class="nav-link">倉庫管理守則</router-link>
-          </li>
         </ul>
       </div>
     </div>
