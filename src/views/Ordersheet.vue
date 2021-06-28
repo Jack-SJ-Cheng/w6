@@ -1,6 +1,7 @@
 <template>
-  <div class="m-top d-flex justify-content-center">
-    <table>
+  <div class="container m-top d-flex justify-content-center">
+    <Loading :active="isLoading"></Loading>
+    <table class="table">
       <thead>
         <td colspan="3"><div class="display-5 text-center">訂單列表</div></td>
         <tr>
@@ -11,7 +12,7 @@
       </thead>
       <tbody>
         <tr v-for="(item) in orders" :key="item">
-          <td class="text-center">{{ new Date(item.create_at) }}</td>
+          <td class="text-center">{{ transDate(item.create_at) }}</td>
           <td class="text-center">{{ item.total }}</td>
           <td v-if="item.is_paid" class="text-success text-center">已付款</td>
           <td v-if="!item.is_paid" class="text-danger text-center">未付款</td>
@@ -26,11 +27,12 @@ export default {
   data() {
     return {
       orders: [],
-      date: [],
+      isLoading: false,
     };
   },
   methods: {
     getOrders(page = 1) {
+      this.isLoading = true;
       this.$http
         .get(
           `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/orders?page=${page}`,
@@ -38,13 +40,16 @@ export default {
         .then((res) => {
           console.log(res);
           this.orders = res.data.orders;
-          this.translateDate();
+          this.isLoading = false;
         });
+    },
+    transDate(time) {
+      const localDate = new Date(time * 1000);
+      return localDate.toLocaleDateString();
     },
   },
   mounted() {
     this.getOrders();
-    console.log(new Date(1624857011));
   },
 };
 </script>

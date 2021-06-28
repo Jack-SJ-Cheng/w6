@@ -25,6 +25,10 @@ const routes = [
     path: '/success',
     component: () => import('../views/Success.vue'),
   },
+  {
+    path: '/ordersheet',
+    component: () => import('../views/Ordersheet.vue'),
+  },
 ];
 
 const router = createRouter({
