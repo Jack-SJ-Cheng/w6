@@ -70,6 +70,7 @@ import Pagination from '../components/Pagination.vue';
 import ProductModal from '../components/ProductModal.vue';
 
 export default {
+  inject: ['emitter'],
   components: {
     Pagination,
     ProductModal,
@@ -133,6 +134,7 @@ export default {
         .then((res) => {
           if (res.data.success) {
             this.isLoading = false;
+            this.$messageTrans(res);
           }
         })
         .catch((err) => console.log(err));

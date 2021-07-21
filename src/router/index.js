@@ -29,6 +29,28 @@ const routes = [
     path: '/ordersheet',
     component: () => import('../views/Ordersheet.vue'),
   },
+  {
+    path: '/login',
+    component: () => import('../views/Login.vue'),
+  },
+  {
+    path: '/admin',
+    component: () => import('../views/Dashboard/Admin.vue'),
+    children: [
+      {
+        path: 'products',
+        component: () => import('../views/Dashboard/AdminProducts.vue'),
+      },
+      {
+        path: 'orders',
+        component: () => import('../views/Dashboard/AdminOrders.vue'),
+      },
+      {
+        path: 'coupons',
+        component: () => import('../views/Dashboard/AdminCoupons.vue'),
+      },
+    ],
+  },
 ];
 
 const router = createRouter({

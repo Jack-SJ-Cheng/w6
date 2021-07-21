@@ -22,10 +22,15 @@ import 'vue-loading-overlay/dist/vue-loading.css';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 
-import bootstrap from 'bootstrap';
+import 'bootstrap';
 
 import App from './App.vue';
 import router from './router';
+
+// 自定義全域方法
+import timeTransformer from './assets/javascript/timeTransformer';
+import toCurrency from './assets/javascript/toCurrency';
+import messageTrans from './assets/javascript/messageTrans';
 
 defineRule('required', required);
 defineRule('email', email);
@@ -41,12 +46,14 @@ setLocale('zh_TW');
 library.add(faUserSecret);
 
 const app = createApp(App);
+app.config.globalProperties.$timeTransformer = timeTransformer;
+app.config.globalProperties.$toCurrency = toCurrency;
+app.config.globalProperties.$messageTrans = messageTrans;
 app.component('Loading', Loading);
 app.component('Loading', Loading);
 app.component('Form', Form);
 app.component('Field', Field);
 app.component('ErrorMessage', ErrorMessage);
 app.use(VueAxios, axios);
-app.use(bootstrap);
 app.use(router);
 app.mount('#app');

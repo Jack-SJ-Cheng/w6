@@ -72,7 +72,6 @@ export default {
   props: ['info'],
   data() {
     return {
-      modal: '',
       addInfo: { product_id: '', qty: 1 },
       qty: 1,
     };
