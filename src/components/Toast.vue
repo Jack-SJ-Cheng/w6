@@ -12,7 +12,6 @@
       :key="item + key"
     >
       <div class="toast-header">
-        <strong class="me-auto">{{ item.title }}</strong>
         <button
           type="button"
           class="btn-close"

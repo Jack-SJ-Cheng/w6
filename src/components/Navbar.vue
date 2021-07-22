@@ -25,16 +25,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">回到櫃台</a>
+            <router-link to="/home/welcom" class="nav-link">回到櫃台</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/products" class="nav-link">瀏覽商品</router-link>
+            <router-link to="/home/products" class="nav-link">瀏覽商品</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/cart" class="nav-link">購物車</router-link>
+            <router-link to="/home/cart" class="nav-link">購物車</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/ordersheet" class="nav-link">訂單列表</router-link>
+            <router-link to="/home/ordersheet" class="nav-link">訂單列表</router-link>
           </li>
         </ul>
       </div>

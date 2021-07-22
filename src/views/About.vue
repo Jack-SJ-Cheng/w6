@@ -180,6 +180,7 @@ export default {
           if (res.data.success) {
             this.isLoading = false;
             this.$router.push('/success');
+            this.$messageTrans(res);
           }
         })
         .catch((err) => {

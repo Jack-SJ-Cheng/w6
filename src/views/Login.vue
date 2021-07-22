@@ -67,6 +67,7 @@ export default {
             const { token, expired } = res.data;
             document.cookie = `braveToken=${token};expires=${new Date(expired)};`;
             this.$router.push('/admin/products');
+            this.$messageTrans(res);
           }
         })
         .catch((err) => {
