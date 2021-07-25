@@ -44,7 +44,7 @@
     </table>
     <div class="d-flex justify-content-end">
       <button type="button" class="btn btn-outline-danger"
-      @click="this.$router.push('/about')">填寫收件資料</button>
+      @click="this.$router.push('/home/about')">填寫收件資料</button>
     </div>
   </div>
 </template>

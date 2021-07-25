@@ -26,15 +26,15 @@ const routes = [
         component: () => import('../views/About.vue'),
       },
       {
-        path: '/check',
+        path: 'check',
         component: () => import('../views/BuyerInfo.vue'),
       },
       {
-        path: '/success',
+        path: 'success',
         component: () => import('../views/Success.vue'),
       },
       {
-        path: '/ordersheet',
+        path: 'ordersheet',
         component: () => import('../views/Ordersheet.vue'),
       },
     ],

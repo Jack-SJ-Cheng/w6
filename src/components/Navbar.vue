@@ -1,14 +1,14 @@
 <template>
 <div class="fixed-top">
-  <div class="d-flex justify-content-center bg-white">
+  <div id="topLogo" class="d-flex justify-content-center bg-white" :class="classList.bigLogo">
     <h1 class="d-none d-lg-block pt-2">
-    <a class="slogo" href="#">勇者倉庫</a>
+    <router-link class="slogo" to="/home/welcome">勇者倉庫</router-link>
   </h1>
   </div>
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">
       <h2>
-        <a class="navbar-toggler border-0 tlogo" href="#">勇者倉庫</a>
+        <router-link class="navbar-toggler border-0 tlogo" to="/home/welcome">勇者倉庫</router-link>
       </h2>
       <button
         ref="bur"
@@ -25,7 +25,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <router-link to="/home/welcom" class="nav-link">回到櫃台</router-link>
+            <router-link to="/home/welcome" class="nav-link">回到櫃台</router-link>
           </li>
           <li class="nav-item">
             <router-link to="/home/products" class="nav-link">瀏覽商品</router-link>
@@ -42,3 +42,15 @@
   </nav>
 </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      classList: {
+        bigLogo: '',
+      },
+    };
+  },
+};
+</script>

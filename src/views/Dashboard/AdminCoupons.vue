@@ -55,12 +55,12 @@
       ref="modal"
       :coupon="coupon"
       :is-new="isNew"
-      @update='updateCoupon'
+      @update="updateCoupon"
     ></CouponModal>
     <DeleteCouponModal
       ref="deleteCouponModal"
       :coupon="coupon"
-      @delete='deleteCoupon'
+      @delete="deleteCoupon"
     ></DeleteCouponModal>
   </div>
 </template>
@@ -119,11 +119,16 @@ export default {
         data: tempCoupon,
       };
       this.$http[httpMethod](api, data)
-        .then(() => {
+        .then((res) => {
           this.isLoading = false;
-          this.$refs.modal.hideModal();
-          this.getData();
-          this.$refs.modal.tempCoupon = {};
+          if (res.data.success) {
+            this.$refs.modal.hideModal();
+            this.getData();
+            this.$refs.modal.tempCoupon = {};
+          } else {
+            console.log('失敗');
+            this.$messageTrans(res);
+          }
         })
         .catch((err) => {
           console.log(err);

@@ -1,5 +1,5 @@
 <template>
-  <div class="background w-100 min-vh-100">
+  <div class="background min-vh-100">
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-md-5 p-4">
@@ -78,9 +78,15 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .background{
-  background-image: url(https://images.unsplash.com/photo-1511866423212-1f95ebd1541c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80);
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.7) 25%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 75%,
+      rgba(255, 255, 255, 0) 100%
+    ),url(https://images.unsplash.com/photo-1511866423212-1f95ebd1541c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80);
   background-size: cover;
 }
 </style>

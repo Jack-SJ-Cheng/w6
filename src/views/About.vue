@@ -179,7 +179,7 @@ export default {
         .then((res) => {
           if (res.data.success) {
             this.isLoading = false;
-            this.$router.push('/success');
+            this.$router.push('/home/success');
             this.$messageTrans(res);
           }
         })
